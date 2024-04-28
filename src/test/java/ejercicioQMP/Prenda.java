@@ -1,19 +1,17 @@
 package ejercicioQMP;
 
-public class Prenda {
-  private String colorPrimario;
-  private String colorSecundario;
-  private TipoPrenda tipo;
-  private String material;
+import java.util.Collection;
 
-  public Prenda(TipoPrenda _tipo,String _material, String _colorPrimario){
+public class Prenda {
+  private Color colorPrimario;
+  private Color colorSecundario;
+  private TipoPrenda tipo;
+  private Material material;
+
+  public Prenda(TipoPrenda _tipo,Material _material, Color _colorPrimario, Color _colorSecundario){
     this.tipo = _tipo;
     this.material = _material;
     this.colorPrimario = _colorPrimario;
-  }
-
-  public Prenda(TipoPrenda _tipo,String _material, String _colorPrimario, String _colorSecundario){
-    this(_tipo, _material, _colorPrimario);
     this.colorSecundario = _colorSecundario;
   }
 }
