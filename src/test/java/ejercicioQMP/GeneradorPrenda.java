@@ -6,6 +6,7 @@ public class GeneradorPrenda {
   private Color colorSecundario;
   private Material material;
   private TramaMaterial trama = TramaMaterial.LISA;
+  private NivelDeFormalidad nivelDeFormalidad;
 
   public void asignarTipo(TipoPrenda tipo){
     if(tipo == null){
@@ -43,6 +44,10 @@ public class GeneradorPrenda {
     this.trama = trama;
   }
 
+  public void asignarFormalidad(NivelDeFormalidad nivel){
+    this.nivelDeFormalidad = nivel;
+  }
+
   private void verificarQueSeaValida(){
     if(this.tipo == null){
       throw new RuntimeException("Debe seleccionar un tipo de prenda");
@@ -53,10 +58,13 @@ public class GeneradorPrenda {
     if(this.colorPrimario == null){
       throw new RuntimeException("Debe seleccionar un color primario");
     }
+    if(this.nivelDeFormalidad == null){
+      throw new RuntimeException("Debe seleccionar un nivel de formalidad");
+    }
   }
 
   public Prenda guardarPrenda(){
     this.verificarQueSeaValida();
-    return new Prenda(this.tipo, this.material, this.colorPrimario, this.colorSecundario);
+    return new Prenda(this.tipo, this.material, this.colorPrimario, this.colorSecundario, this.nivelDeFormalidad);
   }
 }
