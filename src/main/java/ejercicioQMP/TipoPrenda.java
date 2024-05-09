@@ -29,4 +29,8 @@ public class TipoPrenda {
       throw new RuntimeException("El material elegido no es válido para el tipo de prenda");
     }
   }
+
+  public CategoriaPrenda getCategoria(){
+    return this.categoria;
+  }
 }

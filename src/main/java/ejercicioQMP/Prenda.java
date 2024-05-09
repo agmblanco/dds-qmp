@@ -1,7 +1,5 @@
 package ejercicioQMP;
 
-import java.util.Collection;
-
 public class Prenda {
   private Color colorPrimario;
   private Color colorSecundario;
@@ -15,5 +13,13 @@ public class Prenda {
     this.colorPrimario = _colorPrimario;
     this.colorSecundario = _colorSecundario;
     this.nivelDeFormalidad = _nivelDeFormalidad;
+  }
+
+  public CategoriaPrenda getCategoria(){
+    return this.tipo.getCategoria();
+  }
+
+  public NivelDeFormalidad getNivelDeFormalidad(){
+    return this.nivelDeFormalidad;
   }
 }
