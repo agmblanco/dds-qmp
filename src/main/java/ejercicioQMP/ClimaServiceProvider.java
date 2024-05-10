@@ -2,11 +2,17 @@ package ejercicioQMP;
 
 import java.sql.Timestamp;
 
-public class ProveedorDeClima {
-  private static ProveedorDeClima INSTANCE = new ProveedorDeClima();
+public class ClimaServiceProvider {
+  private static ClimaServiceProvider INSTANCE = new ClimaServiceProvider();
+
+  private static int cacheTimeout = 600; //En segundos
+
   private ServicioClimatico servicio;
   private Timestamp ultimaConsulta = new Timestamp(0);
-  private ProveedorDeClima(){
-    
+
+  private ClimaServiceProvider(){
+    this.servicio = new //TODO
   }
+
+  private
 }
