@@ -7,6 +7,7 @@ public class GeneradorPrenda {
   private Material material;
   private TramaMaterial trama = TramaMaterial.LISA;
   private NivelDeFormalidad nivelDeFormalidad;
+  private Double temperaturaMaximaAceptable;
 
   public void asignarTipo(TipoPrenda tipo){
     if(tipo == null){
@@ -44,6 +45,10 @@ public class GeneradorPrenda {
     this.trama = trama;
   }
 
+  public void asignarTemperaturaMaxima(Double temeratura){
+    this.temperaturaMaximaAceptable = temeratura;
+  }
+
   public void asignarFormalidad(NivelDeFormalidad nivel){
     this.nivelDeFormalidad = nivel;
   }
@@ -61,10 +66,13 @@ public class GeneradorPrenda {
     if(this.nivelDeFormalidad == null){
       throw new RuntimeException("Debe seleccionar un nivel de formalidad");
     }
+    if(this.temperaturaMaximaAceptable == null){
+      throw new RuntimeException("Debe seleccionar una temperatura maxima aceptable");
+    }
   }
 
   public Prenda guardarPrenda(){
     this.verificarQueSeaValida();
-    return new Prenda(this.tipo, this.material, this.colorPrimario, this.colorSecundario, this.nivelDeFormalidad);
+    return new Prenda(this.tipo, this.material, this.colorPrimario, this.colorSecundario, this.nivelDeFormalidad, this.temperaturaMaximaAceptable);
   }
 }
