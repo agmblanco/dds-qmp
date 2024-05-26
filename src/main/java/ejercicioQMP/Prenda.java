@@ -8,7 +8,7 @@ public class Prenda {
   private NivelDeFormalidad nivelDeFormalidad;
   private Double temperaturaMaximaAceptable;
 
-  public Prenda(TipoPrenda _tipo,Material _material, Color _colorPrimario, Color _colorSecundario, NivelDeFormalidad _nivelDeFormalidad, Double _temperaturaMaximaAceptable){
+  public Prenda(TipoPrenda _tipo, Material _material, Color _colorPrimario, Color _colorSecundario, NivelDeFormalidad _nivelDeFormalidad, Double _temperaturaMaximaAceptable) {
     this.tipo = _tipo;
     this.material = _material;
     this.colorPrimario = _colorPrimario;
@@ -17,13 +17,15 @@ public class Prenda {
     this.temperaturaMaximaAceptable = _temperaturaMaximaAceptable;
   }
 
-  public CategoriaPrenda getCategoria(){
+  public CategoriaPrenda getCategoria() {
     return this.tipo.getCategoria();
   }
 
-  public NivelDeFormalidad getNivelDeFormalidad(){
+  public NivelDeFormalidad getNivelDeFormalidad() {
     return this.nivelDeFormalidad;
   }
 
-  public Double getTemperaturaMaxima(){ return this.temperaturaMaximaAceptable; }
+  public Double getTemperaturaMaxima() {
+    return this.temperaturaMaximaAceptable;
+  }
 }
